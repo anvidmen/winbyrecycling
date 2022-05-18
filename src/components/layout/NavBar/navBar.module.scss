@@ -6,7 +6,7 @@ $hover-color: #551a8b;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  height: 6.5rem;
+  height: 7rem;
   width: 100%;
   top: 0;
   z-index: 1;
@@ -63,7 +63,7 @@ $hover-color: #551a8b;
     position: relative;
     padding: 0.2em 0;
   }
-  
+
   a::after {
     content: "";
     position: absolute;
@@ -170,17 +170,13 @@ $hover-color: #551a8b;
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar {
-    height: 7.8rem;
-  }
-
   .logo {
     img {
       height: 5.5rem;
     }
     h1 {
       white-space: nowrap;
-      font-size: 28px;
+      font-size: 26px;
     }
   }
 
