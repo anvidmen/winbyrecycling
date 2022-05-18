@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import NavBar from "components/NavBar/NavBar";
+import Body from 'components/layout/Body/Body';
 const App = () => {
   return (
     <Router>
-     <NavBar/>
+     <Body/>
     </Router>
   );
 }
