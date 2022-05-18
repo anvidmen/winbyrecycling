@@ -4,6 +4,7 @@ import About from 'pages/About/About'
 import Games from 'pages/Games/Games'
 import Contact from 'pages/Contact/Contact'
 import Login from 'pages/Login/Login'
+import Register from 'pages/Register/Register'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/games' caseSensitive={false} element={<Games />} />
         <Route path='/contact' caseSensitive={false} element={<Contact />} />
         <Route path='/login' caseSensitive={false} element={<Login />} />
+        <Route path='/register' caseSensitive={false} element={<Register />} />
       </Routes>
     </Router>
   );
