@@ -7,7 +7,7 @@ const Login = () => {
     return (
         <Body>
             <div className={styles.loginform}>
-                <div>
+                <form>
                     <div className={styles.imageContainer}>
                         <img alt="wellcome to login" src={image} />
                     </div>
@@ -23,11 +23,11 @@ const Login = () => {
                     <div className={styles.row}>
                         <button>Acceder</button>
                     </div>
-                    <div className={styles.register}>
+                    <div className={styles.redirect}>
                         <span>¿No tienes cuenta?</span>
                         <Link to="/register">Regístrate</Link>
                     </div>
-                </div>
+                </form>
             </div>
         </Body>
     )

@@ -7,7 +7,7 @@ const Register = () => {
     return (
         <Body>
             <div className={styles.loginform}>
-                <div>
+                <form>
                     <div className={styles.imageContainer}>
                         <img alt="register" src={image} />
                     </div>
@@ -23,11 +23,11 @@ const Register = () => {
                     <div className={styles.row}>
                         <button>Registrarse</button>
                     </div>
-                    <div className={styles.register}>
+                    <div className={styles.redirect}>
                         <span>¿Tienes cuenta?</span>
                         <Link to="/login">Iniciar sesión</Link>
                     </div>
-                </div>
+                </form>
             </div>
         </Body>
     )
