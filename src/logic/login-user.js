@@ -5,9 +5,7 @@ const loginUser = async (username, password) => {
   try {
     const response = await login(data)
 
-    const { data: { user } } = response
-   
-    return user
+    return  response.data
   } catch (error) {
     const { response: { data: { message } } } = error
     throw new Error(message)

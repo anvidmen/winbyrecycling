@@ -1,5 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://localhost:8080'
+const baseURL = "https://gana-reciclando.herokuapp.com"
 
-export const login = data => axios.post(`${baseURL}/user/login`, data)
+export const login = data => axios.post(`${baseURL}/login`, data)
+export const register = data => axios.post(`${baseURL}/register`, data)
