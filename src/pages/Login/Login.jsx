@@ -13,6 +13,7 @@ const Login = ({ onLogin }) => {
 
     const navigate = useNavigate()
 
+    const handleLogin = user => console.log(user)
     const handleSubmit = async e => {
         e.preventDefault()
         let { username, password } = e.target
@@ -30,8 +31,8 @@ const Login = ({ onLogin }) => {
 
         try {
             const user = await loginUser(username, password)
-            onLogin(user)
-            navigate.push('/')
+            handleLogin(user)
+            navigate('/')
         } catch (error) {
             return Swal.fire({
                 icon: 'error',
