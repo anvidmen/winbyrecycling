@@ -11,7 +11,12 @@ const Register = () => {
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
-    const handleLogin = user => console.log(user)
+    const handleLogin = user => {
+        return Swal.fire({
+            icon: 'success',
+            text: `${user?.username}, te has registrado correctamente`
+        })
+    }
     
     const handleSubmit = async e => {
         e.preventDefault()
@@ -31,7 +36,7 @@ const Register = () => {
         try {
             const user = await registerUser(username, password)
             handleLogin(user)
-            navigate('/')
+            navigate('/login')
         } catch (error) {
             return Swal.fire({
                 icon: 'error',
