@@ -1,0 +1,15 @@
+.avatar {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    font-size: 2rem;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: "Poppins";
+    line-height: 1;
+    user-select: none;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: #fff;
+    margin: auto .5rem;
+}
