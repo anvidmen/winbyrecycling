@@ -2,30 +2,27 @@ import Body from "components/layout/Body/Body"
 import Unity, { UnityContext } from "react-unity-webgl";
 import styles from "./Games.module.scss"
 import React, { useState, useEffect } from "react";
+import Login from "pages/Login/Login";
 
 const unityContext = new UnityContext({
   loaderUrl: "unity/Build/BuildSinComprimir.loader.js",
   dataUrl: "unity/Build/BuildSinComprimir.data",
   frameworkUrl: "unity/Build/BuildSinComprimir.framework.js",
   codeUrl: "unity/Build/BuildSinComprimir.wasm",
+  webglContextAttributes: {
+    preserveDrawingBuffer: true,
+  },
 });
 
 const Games = () => {
-    const [isGameOver, setIsGameOver] = useState(false);
-    const [score, setScore] = useState(50);
-  
-    useEffect(function () {
-      unityContext.on("GameOver", function (score) {
-        setIsGameOver(true);
-        setScore(score);
-      });
-    }, []);
+  function setUsername() {
+    unityContext.send("GameController", "SetUsername", Login.setUsername);
+  }
 
     return (
         <body>
             <h1>Bienvenidos a nuestros juegos didacticos</h1>
-            <p>{`Game Over! ${score} points`}</p>
-            
+            <button onClick={setUsername}>Spawn a bunch!</button>
             <Unity className={styles.game} unityContext={unityContext} />
         </body>
     )
