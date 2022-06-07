@@ -4,30 +4,31 @@ import styles from "./Games.module.scss"
 import React, { useState, useEffect } from "react";
 
 const unityContext = new UnityContext({
-  loaderUrl: "unity/Build/BuildSinComprimir.loader.js",
-  dataUrl: "unity/Build/BuildSinComprimir.data",
-  frameworkUrl: "unity/Build/BuildSinComprimir.framework.js",
-  codeUrl: "unity/Build/BuildSinComprimir.wasm",
+  loaderUrl: "unity/Build/GanaReciclandoBuild.loader.js",
+  dataUrl: "unity/Build/GanaReciclandoBuild.data",
+  frameworkUrl: "unity/Build/GanaReciclandoBuild.framework.js",
+  codeUrl: "unity/Build/GanaReciclandoBuild.wasm",
 });
 
 const Games = () => {
-    const [isGameOver, setIsGameOver] = useState(false);
-    const [score, setScore] = useState(50);
+  const [username] = useState("daniel_00234023402340230_asdasdas");
+  function sendUsername() {
+    unityContext.send("GameController", "SetUsername", username);
+  }
+useEffect(function()
+{
+  unityContext.on("loaded", ()=>{
+    sendUsername();
   
-    useEffect(function () {
-      unityContext.on("GameOver", function (score) {
-        setIsGameOver(true);
-        setScore(score);
-      });
-    }, []);
+});
+}, []);  
 
     return (
-        <body>
-            <h1>Bienvenidos a nuestros juegos didacticos</h1>
-            <p>{`Game Over! ${score} points`}</p>
-            
+        <Body>
+            <h1>Bienvenidos a nuestros juegos didácticos</h1>           
             <Unity className={styles.game} unityContext={unityContext} />
-        </body>
+            
+        </Body>
     )
 }
 
