@@ -7,13 +7,12 @@ import Body from "components/layout/Body/Body"
 import styles from "./Login.module.scss"
 import image from "assets/images/wellcome.png"
 
-const Login = ({ onLogin }) => {
+const Login = ({ handleToken }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
 
-    const handleLogin = user => console.log(user)
     const handleSubmit = async e => {
         e.preventDefault()
         let { username, password } = e.target
@@ -31,7 +30,7 @@ const Login = ({ onLogin }) => {
 
         try {
             const user = await loginUser(username, password)
-            handleLogin(user)
+            handleToken(user)
             navigate('/')
         } catch (error) {
             return Swal.fire({
