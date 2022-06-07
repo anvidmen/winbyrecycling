@@ -12,12 +12,11 @@ const unityContext = new UnityContext({
 });
 
 const Games = () => {
-  const [user] = useContext(AppContext)
-
+  const [user] = useContext(AppContext);
   useEffect(() => {
-    unityContext.on("loaded", () => unityContext.send("GameController", 1, user))
+    unityContext.on("loaded", () => unityContext.send("GameController", "SetUsername", String(user)))
   }, []);
-
+  window.alert = console.log;
   return (
     <Body>
       <div className={styles.container}>
