@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { AppContext } from 'providers/AppProvider'
 import { decodeToken } from "react-jwt"
@@ -16,7 +16,8 @@ const App = () => {
   const handleToken = token => {
     const accessToken = token?.access_token;
     if(accessToken){
-      const username = decodeToken(accessToken)
+      const tokenInfo = decodeToken(accessToken)
+      const {sub: username} = tokenInfo
       setUser(username)
     }
     return accessToken
