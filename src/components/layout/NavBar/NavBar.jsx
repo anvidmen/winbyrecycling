@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AppContext } from 'providers/AppProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai"
@@ -9,9 +10,9 @@ import styles from "./navBar.module.scss"
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
-    const user = false
+    const [user] = useContext(AppContext)
+    
     const navigate = useNavigate()
-
     const handleLogout = () => {
         logout()
         navigate('/')
@@ -32,10 +33,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.sign}>
-                {user ? (
+              { user?.sub ? (
                     <>
                     <div className={styles.avatar}>
-                        <Avatar letter={user.charAt(0).toUpperCase()} />
+                        <Avatar letter={user?.sub.charAt(0).toUpperCase()} />
                     </div>
                         <Link to='/' onClick={handleLogout}><AiOutlineLogout size={32} /></Link>
                     </>
