@@ -2,8 +2,8 @@ export const refresh = () => {
     window.location.reload()
   }
   
-  export const auth = user => {
-    return localStorage.setItem('user', JSON.stringify(user))
+  export const auth = token => {
+    return localStorage.setItem('token', JSON.stringify(token))
   }
   
   export const logout = () => {

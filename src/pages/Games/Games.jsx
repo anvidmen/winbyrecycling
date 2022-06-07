@@ -1,30 +1,35 @@
 import Body from "components/layout/Body/Body"
 import Unity, { UnityContext } from "react-unity-webgl";
 import styles from "./Games.module.scss"
-import React, { useState, useEffect } from "react";
-import Login from "pages/Login/Login";
+import React, { useState, useEffect, useContext } from "react";
+import AppContext from 'providers/AppProvider';
 
 const unityContext = new UnityContext({
-  loaderUrl: "unity/Build/BuildSinComprimir.loader.js",
-  dataUrl: "unity/Build/BuildSinComprimir.data",
-  frameworkUrl: "unity/Build/BuildSinComprimir.framework.js",
-  codeUrl: "unity/Build/BuildSinComprimir.wasm",
-  webglContextAttributes: {
-    preserveDrawingBuffer: true,
-  },
+  loaderUrl: "unity/Build/GanaReciclandoBuild.loader.js",
+  dataUrl: "unity/Build/GanaReciclandoBuild.data",
+  frameworkUrl: "unity/Build/GanaReciclandoBuild.framework.js",
+  codeUrl: "unity/Build/GanaReciclandoBuild.wasm",
 });
 
 const Games = () => {
-  function setUsername() {
-    unityContext.send("GameController", "SetUsername", Login.setUsername);
+  const [user] = useContext(AppContext)
+  function sendUsername() {
+    unityContext.send("GameController", "SetUsername", user?.sub);
   }
+useEffect(function()
+{
+  unityContext.on("loaded", ()=>{
+    sendUsername();
+  
+});
+}, []);  
 
     return (
-        <body>
-            <h1>Bienvenidos a nuestros juegos didacticos</h1>
-            <button onClick={setUsername}>Spawn a bunch!</button>
+        <Body>
+            <h1>Bienvenidos a nuestros juegos didácticos</h1>           
             <Unity className={styles.game} unityContext={unityContext} />
-        </body>
+            
+        </Body>
     )
 }
 

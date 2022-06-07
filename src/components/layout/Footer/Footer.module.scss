@@ -1,0 +1,145 @@
+.footerDistributed {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px "Poppins";
+  padding: 55px 50px;
+
+  .footerLeft {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    img {
+      height: 4rem;
+    }
+  }
+
+  .footerCenter {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+    svg {
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    p {
+      display: inline-block;
+      color: #000;
+      font-weight: 400;
+      vertical-align: middle;
+      margin: 0;
+
+      a {
+        color: #00c2fb;
+        text-decoration: none;
+      }
+      :hover {
+        color: #551a8b;
+      }
+    }
+  }
+
+  .footerRight {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+
+  .footerLinks {
+    color: #000;
+    margin: 20px 0 12px;
+    padding: 0;
+    a {
+      display: inline-block;
+      line-height: 1.8;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+      &:before {
+        content: "|";
+        font-weight: 300;
+        font-size: 20px;
+        left: 0;
+        color: #000;
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+    :hover {
+      color: #551a8b;
+    }
+    .links {
+      &:before {
+        content: none;
+      }
+    }
+  }
+  .footerCompanyName {
+    color: rgb(57, 57, 57);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  .footerCompanyAbout {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    span {
+      display: block;
+      color: #000;
+      font: bold 18px "Poppins";
+      margin-bottom: 20px;
+    }
+  }
+  .footerIcons {
+    margin-top: 15px;
+    a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      line-height: 35px;
+      margin: 0 3px;
+    }
+    :hover {
+      color: #551a8b;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .footerDistributed {
+    font: bold 14px "Poppins";
+    .footerLeft {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .footerCenter {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+      svg {
+        margin-left: 0;
+      }
+    }
+    .footerRight {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
