@@ -33,10 +33,10 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={styles.sign}>
-              { user?.sub ? (
+              { user?(
                     <>
                     <div className={styles.avatar}>
-                        <Avatar letter={user?.sub.charAt(0).toUpperCase()} />
+                        <Avatar letter={user?.charAt(0).toUpperCase()} />
                     </div>
                         <Link to='/' onClick={handleLogout}><AiOutlineLogout size={32} /></Link>
                     </>

@@ -27,7 +27,8 @@ const App = () => {
     const accessToken = retrievedToken?.access_token;
 
     if (accessToken) {
-      const username = decodeToken(accessToken)
+      const tokenInfo = decodeToken(accessToken)
+      const {sub: username} = tokenInfo
       setUser(username)
     }
   }, [])
