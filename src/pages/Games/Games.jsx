@@ -1,7 +1,8 @@
 import Body from "components/layout/Body/Body"
 import Unity, { UnityContext } from "react-unity-webgl";
 import styles from "./Games.module.scss"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import AppContext from 'providers/AppProvider';
 
 const unityContext = new UnityContext({
   loaderUrl: "unity/Build/GanaReciclandoBuild.loader.js",
@@ -11,9 +12,9 @@ const unityContext = new UnityContext({
 });
 
 const Games = () => {
-  const [username] = useState("daniel_00234023402340230_asdasdas");
+  const [user] = useContext(AppContext)
   function sendUsername() {
-    unityContext.send("GameController", "SetUsername", username);
+    unityContext.send("GameController", "SetUsername", user?.sub);
   }
 useEffect(function()
 {
