@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 
 const AppProvider = ({ children }) => {
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState()
   
   return (
     <AppContext.Provider value={[user, setUser]}>
