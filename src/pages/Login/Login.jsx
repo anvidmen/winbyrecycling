@@ -43,7 +43,7 @@ const Login = ({ handleToken }) => {
 
     return (
         <Body>
-            <div className={styles.loginform}>
+            <div className={styles.loginForm}>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.imageContainer}>
                         <img alt="wellcome to login" src={image} />

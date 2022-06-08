@@ -5,16 +5,28 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 6rem 0 0;
-
 }
 
 .game {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+.emptyContainer {
+  height: 10vh;
+}
 
+@media screen and (min-width: 768px) {
   .game {
     width: 85%;
+  }
+
+  .emptyContainer {
+    height: 29vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .emptyContainer {
+    height: 46vh;
   }
 }

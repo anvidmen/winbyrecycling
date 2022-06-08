@@ -48,7 +48,7 @@ const Register = () => {
 
     return (
         <Body>
-            <div className={styles.loginform}>
+            <div className={styles.registerForm}>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.imageContainer}>
                         <img alt="register" src={image} />
