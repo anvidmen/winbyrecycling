@@ -63,7 +63,7 @@
     position: relative;
     width: 12rem;
     height: 22rem;
-    margin: 4rem;
+    margin: 6rem 3rem;
     &:hover {
       .content {
         transform: translate(0, 3.5rem);
@@ -119,6 +119,7 @@
 
     a {
       text-decoration: none;
+      color: #171717;
     }
 
     a:nth-child(1){
