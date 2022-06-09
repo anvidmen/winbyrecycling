@@ -83,7 +83,7 @@
     .image {
       flex: 3;
       order: 3;
-      width: 40%;
+      width: 50%;
       margin-top: 4rem;
 
       img {
@@ -114,6 +114,11 @@
 
     h1 {
       margin-top: 10rem;
+    }
+
+    .image {
+      width: 48%;
+      max-height: 80%;
     }
 
     p {
