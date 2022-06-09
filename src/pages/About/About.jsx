@@ -1,7 +1,7 @@
 import Body from "components/layout/Body/Body"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 import { TbWorld } from "react-icons/tb"
-import juan from "assets/images/juan.JPG"
+import juan from "assets/images/juan.jpeg"
 import team from "assets/images/team.jpeg"
 import sheila from "assets/images/sheila.jpeg"
 import adrian from "assets/images/adrian.jpeg"
@@ -27,56 +27,58 @@ const About = () => {
                     Nuestro propósito es conseguir que la educación ambiental esté al alcance de todos y a partir de ahí mejorar el entorno y la vida de las personas.
                 </p>
             </div>
-            <h2 className={styles.members}>Integrantes</h2>
-            <div className={styles.group}>
-                <div className={styles.container}>
-                    <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={juan} alt="juan-omen" />
-                        </div>
-                        <div className={styles.content}>
-                            <h3>Juan David Omen</h3>
-                            <div>
-                                <a href="https://www.linkedin.com/in/juan-om/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
-                                <a href="https://github.com/anvidmen" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
-                                <a href="https://anvidmen.netlify.app/" target="_blank" rel="noopener noreferrer"><TbWorld size={32} /></a>
+            <div className={styles.membersSection}>
+                <h2 className={styles.members}>Integrantes</h2>
+                <div className={styles.group}>
+                    <div className={styles.container}>
+                        <div className={styles.box}>
+                            <div className={styles.imgBox}>
+                                <img src={juan} alt="juan-omen" />
+                            </div>
+                            <div className={styles.content}>
+                                <h3>Juan David Omen</h3>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/juan-om/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
+                                    <a href="https://github.com/anvidmen" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                                    <a href="https://anvidmen.netlify.app/" target="_blank" rel="noopener noreferrer"><TbWorld size={32} /></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={sheila} alt="sheila" />
-                        </div>
-                        <div className={styles.content}>
-                            <h3>Sheila Marín</h3>
-                            <div>
-                                <a href="https://www.linkedin.com/in/sheila-mar%C3%ADn-a48256228/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
-                                <a href="https://github.com/sheilamarinc" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                        <div className={styles.box}>
+                            <div className={styles.imgBox}>
+                                <img src={sheila} alt="sheila" />
+                            </div>
+                            <div className={styles.content}>
+                                <h3>Sheila Marín</h3>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/sheila-mar%C3%ADn-a48256228/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
+                                    <a href="https://github.com/sheilamarinc" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={mel} alt="mel" />
-                        </div>
-                        <div className={styles.content}>
-                            <h3>Mel Aubets Serra</h3>
-                            <div>
-                                <a href="https://www.linkedin.com/in/mel-aubets-serra/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
-                                <a href="https://github.com/MelAubets" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                        <div className={styles.box}>
+                            <div className={styles.imgBox}>
+                                <img src={mel} alt="mel" />
+                            </div>
+                            <div className={styles.content}>
+                                <h3>Mel Aubets Serra</h3>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/mel-aubets-serra/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
+                                    <a href="https://github.com/MelAubets" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={adrian} alt="adrian" />
-                        </div>
-                        <div className={styles.content}>
-                            <h3>Adrian Nuñez Martin</h3>
-                            <div>
-                                <a href="https://www.linkedin.com/in/adrian-nu%C3%B1ez-martin/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
-                                <a href="https://github.com/hachi22" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
-                                <a href="https://www.hachinima.es/" target="_blank" rel="noopener noreferrer"><TbWorld size={32} /></a>
+                        <div className={styles.box}>
+                            <div className={styles.imgBox}>
+                                <img src={adrian} alt="adrian" />
+                            </div>
+                            <div className={styles.content}>
+                                <h3>Adrian Nuñez Martin</h3>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/adrian-nu%C3%B1ez-martin/" target="_blank" rel="noopener noreferrer"><BsLinkedin size={32} /></a>
+                                    <a href="https://github.com/hachi22" target="_blank" rel="noopener noreferrer"><BsGithub size={32} /></a>
+                                    <a href="https://www.hachinima.es/" target="_blank" rel="noopener noreferrer"><TbWorld size={32} /></a>
+                                </div>
                             </div>
                         </div>
                     </div>
