@@ -1,0 +1,152 @@
+.container {
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f5f3;
+  margin-top: 6.5rem;
+  padding: 0 2rem;
+}
+
+.paragraph {
+  width: 100%;
+
+  h1 {
+    margin-top: 2.8rem;
+    text-align: center;
+    font-family: "Poppins";
+    font-size: 38px;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  p {
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 200;
+    text-align: justify;
+  }
+
+  .readMore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00989d;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+    a {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-family: "Poppins";
+      font-weight: 800;
+      font-size: 20px;
+    }
+  }
+}
+
+.readMore:hover {
+  box-shadow: 1px 1px 5px 1px rgba(85, 26, 139, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: auto;
+  }
+  .paragraph {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 550px;
+
+    h1 {
+      flex: 0;
+      width: 50%;
+      margin-top: 8rem;
+      font-size: 40px;
+      text-align: start;
+      margin-bottom: 0;
+    }
+
+    .image {
+      flex: 3;
+      order: 3;
+      width: 50%;
+      margin-top: 4rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+      order: 1;
+      flex: 0;
+      width: 42%;
+      margin-right: 2rem;
+    }
+
+    .readMore {
+      order: 2;
+      margin-top: 1rem;
+      width: 12rem;
+      height: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph {
+    height: 600px;
+
+    h1 {
+      margin-top: 10rem;
+    }
+
+    .image {
+      width: 48%;
+      max-height: 80%;
+    }
+
+    p {
+      width: 43%;
+    }
+
+    .readMore {
+      width: 14rem;
+
+      a {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .paragraph {
+    height: 650px;
+
+    h1 {
+      margin-top: 12rem;
+      font-size: 55px;
+    }
+
+    p {
+      width: 45%;
+      font-size: 18px;
+    }
+  }
+}

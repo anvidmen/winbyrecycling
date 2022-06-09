@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { AppContext } from 'providers/AppProvider'
+import { decodeToken } from "react-jwt"
+import retrieveToken from 'logic/retrieve-token'
+import Home from 'pages/Home/Home'
+import About from 'pages/About/About'
+import Games from 'pages/Games/Games'
+import Contact from 'pages/Contact/Contact'
+import Login from 'pages/Login/Login'
+import Register from 'pages/Register/Register'
 
-function App() {
+const App = () => {
+  const [user, setUser] = useContext(AppContext)
+
+  const handleToken = token => {
+    const accessToken = token?.access_token;
+    if(accessToken){
+      const tokenInfo = decodeToken(accessToken)
+      const {sub: username} = tokenInfo
+      setUser(username)
+    }
+    return accessToken
+  }
+
+  useEffect(() => {
+    const retrievedToken = retrieveToken()
+    const accessToken = retrievedToken?.access_token;
+
+    if (accessToken) {
+      const tokenInfo = decodeToken(accessToken)
+      const {sub: username} = tokenInfo
+      setUser(username)
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' caseSensitive={false} element={<Home />} />
+        <Route path='/about' caseSensitive={false} element={<About />} />
+        <Route path='/games' caseSensitive={false} element={<Games />} />
+        <Route path='/contact' caseSensitive={false} element={<Contact />} />
+        <Route path='/login' caseSensitive={false} element={<Login handleToken={handleToken} />} />
+        <Route path='/register' caseSensitive={false} element={<Register />} />
+      </Routes>
+    </Router>
   );
 }
 
