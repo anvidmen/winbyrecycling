@@ -12,9 +12,8 @@ const Home = () => {
                         <img alt='recycle' src={recycle}></img>
                     </div>
                     <p>
-                        Where does it come from?
-                        Contrary to popular belief, Lorem Ipsum is not simply random text.
-                        It has roots in a piece of classical Latin literature from 45 BC.
+                        Eres conciente con los residuos que desechas? <br/>
+                        El 90% de los residuos se pueden reciclar, por lo que tan sólo el 10% de la basura no es reciclable.
                     </p>
                     <div className={styles.readMore}>
                         <a alt="read more" href='/#'>Leer más...</a>
